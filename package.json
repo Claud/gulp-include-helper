@@ -1,6 +1,6 @@
 {
     "name": "gulp-include-helper",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Helps you include your assets in html or templates file.",
     "main": "index.js",
     "scripts": {
