@@ -1,0 +1,24 @@
+{
+  "name": "gulp-include-helper",
+  "version": "0.0.1",
+  "description": "Help you include your assets in html or templates file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Claud/gulp-include-helper"
+  },
+  "keywords": [
+    "gulp",
+    "build",
+    "assets"
+  ],
+  "author": "Shiryaev Andrey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Claud/gulp-include-helper/issues"
+  },
+  "homepage": "https://github.com/Claud/gulp-include-helper"
+}
