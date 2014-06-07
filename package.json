@@ -1,24 +1,44 @@
 {
-  "name": "gulp-include-helper",
-  "version": "0.0.1",
-  "description": "Help you include your assets in html or templates file.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Claud/gulp-include-helper"
-  },
-  "keywords": [
-    "gulp",
-    "build",
-    "assets"
-  ],
-  "author": "Shiryaev Andrey",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Claud/gulp-include-helper/issues"
-  },
-  "homepage": "https://github.com/Claud/gulp-include-helper"
+    "name": "gulp-include-helper",
+    "version": "0.0.1",
+    "description": "Helps you include your assets in html or templates file.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Claud/gulp-include-helper"
+    },
+    "keywords": [
+        "gulp",
+        "build",
+        "assets"
+    ],
+    "author": "Shiryaev Andrey",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Claud/gulp-include-helper/issues"
+    },
+    "homepage": "https://github.com/Claud/gulp-include-helper",
+    "keywords": [
+        "gulpplugin",
+        "html",
+        "include",
+        "import",
+        "require",
+        "assets"
+    ],
+    "dependencies": {
+        "replace-ext": "0.0.1",
+        "through2": "^0.4.1",
+        "glob": "^3.2.9",
+        "gulp-util": "^2.2.14",
+        "mkdirp": "^0.5.0"
+    },
+    "devDependencies": {
+        "vinyl": "^0.2.3",
+        "mocha": "^1.18.0",
+        "mockery": "^1.4.0"
+    }
 }

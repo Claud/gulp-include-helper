@@ -7,6 +7,7 @@ var through = require('through2'),
     gutil = require('gulp-util'),
     fs = require('fs'),
     crypto = require('crypto'),
+    mkdirp = require('mkdirp'),
     PluginError = gutil.PluginError;
 
 var PLUGIN_NAME = 'gulp-include-source';
@@ -29,7 +30,7 @@ var Concat = {
         console.log(filePath);
         var tmp = path.dirname(filePath);
         if (!fs.existsSync(tmp)) {
-            fs.mkdirSync(tmp, '0775');
+            mkdirp.sync(tmp, '0775');
         }
         fs.writeFileSync(filePath, new Buffer(content));
 
