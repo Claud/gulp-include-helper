@@ -1,3 +1,11 @@
+/**
+ * gulp-include-helper
+ * https://github.com/Claud/gulp-include-helper
+ *
+ * Copyright (c) 2014 Shiryaev Andrey <grabzila@gmail.com>
+ * The MIT license.
+ */
+
 'use strict';
 
 var through = require('through2'),
@@ -10,8 +18,7 @@ var through = require('through2'),
     mkdirp = require('mkdirp'),
     PluginError = gutil.PluginError;
 
-var PLUGIN_NAME = 'gulp-include-source';
-
+var PLUGIN_NAME = 'gulp-include-helper';
 var PLACEHOLDERS = {
     'js': '<script type="text/javascript" src="%filePath%"></script>',
     'css': '<link rel="stylesheet" href="%filePath%">'
@@ -25,9 +32,9 @@ var Concat = {
         filePath = filePath.replace(/%type%/ig, group.type);
         filePath = filePath.replace(/%groupName%/ig, group.groupName);
         filePath = path.normalize(filePath);
-        filePath = filePath.basePath.replace(/\\/g, '/');
-
+        filePath = filePath.replace(/\\/g, '/');
         console.log(filePath);
+
         var tmp = path.dirname(filePath);
         if (!fs.existsSync(tmp)) {
             mkdirp.sync(tmp, '0775');
@@ -123,9 +130,8 @@ function resetCache(filePath, addQueryString, type) {
         } else {
             line = filePath.replace(/(.+?)\.(min\.|)(css|js)$/i, '$1.v-' + hash.toString().substr(0, 9) + '.$2$3');
         }
-    }
-    catch(e) {
-        // fail silently.
+    } catch(err) {
+        this.emit('error', new gutil.PluginError(PLUGIN_NAME, err));
     }
     return line;
 }
@@ -150,7 +156,6 @@ function injectFiles(file, options) {
             if (options.concat && options.concat.active) {
                 var tmp = Concat.concat(files, group);
                 files = tmp ? [tmp] : files;
-                console.log(files);
             }
 
             includesData = files.map(function(filePath) {
@@ -168,7 +173,6 @@ function injectFiles(file, options) {
         }
 
         contents = Parser.include(contents, includesData, options.removeThisComment);
-        //console.log(contents);
     });
 
     return contents;

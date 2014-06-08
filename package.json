@@ -10,12 +10,7 @@
         "type": "git",
         "url": "https://github.com/Claud/gulp-include-helper"
     },
-    "keywords": [
-        "gulp",
-        "build",
-        "assets"
-    ],
-    "author": "Shiryaev Andrey",
+    "author": "Shiryaev Andrey <grabzila@gmail.com>",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/Claud/gulp-include-helper/issues"
@@ -23,6 +18,7 @@
     "homepage": "https://github.com/Claud/gulp-include-helper",
     "keywords": [
         "gulpplugin",
+        "gulp",
         "html",
         "include",
         "import",
